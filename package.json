@@ -1,0 +1,28 @@
+{
+  "name": "tailwindcss-triangle-after",
+  "version": "1.0.0",
+  "description": "CSS :after triangle plugin for tailwindcss framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisrowe/tailwindcss-triangle-after.git"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "plugin",
+    "tailwindcss-plugin"
+  ],
+  "author": "Chris Rowe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrisrowe/tailwindcss-triangle-after/issues"
+  },
+  "homepage": "https://github.com/chrisrowe/tailwindcss-triangle-after#readme",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  }
+}
