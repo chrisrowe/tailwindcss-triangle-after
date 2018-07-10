@@ -15,10 +15,10 @@ This plugin generates styles for CSS based triangles via `::after` pseudo-elemen
 
 The plugin accepts multiple objects where each key defines a class suffix for a triangle name. Triangle options are...
 
-- `direction`: [`up`, `down`, `left`, `right`]
-- `color`: eg. `colors['blue']`
-- `width`: eg. `12` (always parsed as integers and generated as px)
-- `right`: (optional / default `1rem`): eg. `2rem`. How far from the right of the parent should the pseudo-element be?
+- `color`: _e.g. `colors['blue']`_
+- `direction`: _e.g. `up`, `down`, `left` or `right`_
+- `right`: (optional / default `1rem`) How far from the right of the parent should the pseudo-element be? _e.g. `2rem`._
+- `size`: (in pixels) _e.g. an array `[width, height]` or `9` for an equilateral triangle._
 
 Here is the example for adding it to your project plugins
 
@@ -30,15 +30,15 @@ module.exports = {
     require('./plugins/triangle-after')({
       triangles: {
         select: {
-          direction: 'up',
           color: colors['blue'],
-          width: '12'
+          direction: 'down',
+          size: [10, 6],
         },
         next: {
-          direction: 'right',
           color: colors['blue-darker'],
-          width: '20',
-          right: '2rem'
+          direction: 'right',
+          right: '2rem',
+          size: 12
         }
       },
     }),
@@ -64,8 +64,8 @@ This configuration would create the following classes ideal for using for custom
   transform: translateY(-50%);
   width: 0;
   right: 1rem;
-  border-bottom-color: #3490dc;
-  border-width: 0 6px 10.392px 6px;
+  border-top-color: #3490dc;
+  border-width: 6px 5px 0 5px;
 }
 
 .triangle-after-next {
@@ -84,7 +84,7 @@ This configuration would create the following classes ideal for using for custom
   width: 0;
   right: 2rem;
   border-left-color: #1c3d5a;
-  border-width: 10px 0 10px 17.32px;
+  border-width: 12px 0 12px 12px;
 }
 ```
 

@@ -20,42 +20,33 @@ module.exports = function ({
   function getTriangle(triangle) {
     let triangleStyles = _.clone(baseTriangle)
     triangleStyles['right'] = triangle.right ? triangle.right : '1rem'
+    if (triangle.size.length === 2) {
+      var tY = triangle.direction == "up" || triangle.direction == "down" ?
+        triangle.size[1] + "px" :
+        triangle.size[1] / 2 + "px"
+      var tX = triangle.direction == "up" || triangle.direction == "down" ?
+        triangle.size[0] / 2 + "px" :
+        triangle.size[0] + "px"
+    } else {
+      var tY = triangle.size + "px"
+      var tX = triangle.size + "px"
+    }
     switch (triangle.direction) {
       case 'up':
         triangleStyles['borderBottomColor'] = triangle.color
-        triangleStyles['borderWidth'] = [
-          0,
-          (parseInt(triangle.width) / 2) + 'px',
-          (parseInt(triangle.width) * 0.866) + 'px',
-          (parseInt(triangle.width) / 2 + 'px')
-        ].join(' ')
+        triangleStyles['borderWidth'] = [0, tX, tY, tX].join(' ')
         break;
       case 'down':
         triangleStyles['borderTopColor'] = triangle.color
-        triangleStyles['borderWidth'] = [
-          (parseInt(triangle.width) * 0.866) + 'px',
-          (parseInt(triangle.width) / 2 + 'px'),
-          0,
-          (parseInt(triangle.width) / 2) + 'px'
-        ].join(' ')
+        triangleStyles['borderWidth'] = [tY, tX, 0, tX].join(' ')
         break;
       case 'left':
         triangleStyles['borderRightColor'] = triangle.color
-        triangleStyles['borderWidth'] = [
-          (parseInt(triangle.width) / 2) + 'px',
-          (parseInt(triangle.width) * 0.866) + 'px',
-          (parseInt(triangle.width) / 2 + 'px'),
-          0
-        ].join(' ')
+        triangleStyles['borderWidth'] = [tY, tX, tY, 0].join(' ')
         break;
       case 'right':
         triangleStyles['borderLeftColor'] = triangle.color
-        triangleStyles['borderWidth'] = [
-          (parseInt(triangle.width) / 2) + 'px',
-          0,
-          (parseInt(triangle.width) / 2 + 'px'),
-          (parseInt(triangle.width) * 0.866) + 'px'
-        ].join(' ')
+        triangleStyles['borderWidth'] = [tY, 0, tY, tX].join(' ')
         break;
     }
 

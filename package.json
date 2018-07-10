@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-triangle-after",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "CSS :after triangle plugin for tailwindcss framework",
   "main": "index.js",
   "scripts": {
