@@ -1,5 +1,7 @@
 # Triangle After Tailwind Plugin
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/chrisrowe/tailwindcss-triangle-after.svg)](https://greenkeeper.io/)
+
 ## Installation
 
 Add this plugin to your project:
