@@ -1,6 +1,6 @@
 {
   "name": "tailwindcss-triangle-after",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "CSS :after triangle plugin for tailwindcss framework",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/chrisrowe/tailwindcss-triangle-after#readme",
   "dependencies": {
-    "lodash": "^4.17.10"
+    "lodash": ">=4.17.11"
   }
 }

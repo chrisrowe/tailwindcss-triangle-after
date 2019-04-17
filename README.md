@@ -18,6 +18,7 @@ The plugin accepts multiple objects where each key defines a class suffix for a 
 - `color`: _e.g. `colors['blue']`_
 - `direction`: _e.g. `up`, `down`, `left` or `right`_
 - `right`: (optional / default `1rem`) How far from the right of the parent should the pseudo-element be? _e.g. `2rem`._
+- `top`: (optional / default `50%`) How far from the top of the parent should the pseudo-element be?
 - `size`: (in pixels) _e.g. an array `[width, height]` or `9` for an equilateral triangle._
 
 Here is the example for adding it to your project plugins
@@ -38,6 +39,7 @@ module.exports = {
           color: colors['blue-darker'],
           direction: 'right',
           right: '2rem',
+          top: '3rem',
           size: 12
         }
       },

@@ -12,13 +12,15 @@ module.exports = function ({
     height: 0,
     position: 'absolute',
     pointerEvents: 'none',
-    top: '50%',
-    transform: 'translateY(-50%)',
     width: 0
   }
 
   function getTriangle(triangle) {
     let triangleStyles = _.clone(baseTriangle)
+    triangleStyles['top'] = triangle.top ? triangle.top : '50%'
+    if (triangleStyles['top'] == '50%') {
+      triangleStyles['transform'] = 'translateY(-50%)'
+    }
     triangleStyles['right'] = triangle.right ? triangle.right : '1rem'
     if (triangle.size.length === 2) {
       var tY = triangle.direction == "up" || triangle.direction == "down" ?
